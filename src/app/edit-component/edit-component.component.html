@@ -1,0 +1,112 @@
+<div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('assets/images/slider-bg.png');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="text-contant">
+          <h2>
+            <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
+            <a href="" class="typewrite" data-period="2000" data-type='[ "Edit Profile", "Be Active", "We are Expert!" ]'>
+              <span class="wrap"></span>
+            </a>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
+<footer id="footer" class="footer-area wow fadeIn">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="logo padding">
+          <a href=""><img src="assets/images/logo.png" alt=""></a>
+          <br>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcriber-info">
+          <h3>Edit Profile</h3>
+          <p>You are updating your profile.</p>
+          <div class="subcriber-box">
+            <form #f="ngForm" id="mc-form" class="mc-form">
+
+              <div class="newsletter-form">
+
+                <br><br><br>
+
+                <!-- mailchimp-alerts Start -->
+                <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+                <p>FirstName</p>
+
+                <input type="text" autocomplete="off" id="mc-email" placeholder="First Name" class="form-control"
+                       name="FirstName" [(ngModel)]="user.firstName" #firstName="ngModel" required  [value]="user.firstName">
+                <br><br><br>
+                <div *ngIf="firstName.invalid && firstName.touched">
+
+                  <p class="text-danger">Please enter your First Name</p>
+                </div>
+                <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+                <p>LastName</p>
+
+                <input type="text" autocomplete="off" id="mc-email" placeholder="Last Name" class="form-control" [value]="user.lastName"
+                       name="LastName" [(ngModel)]="user.lastName" #lastName="ngModel" required>
+                <br>
+                <br><br>
+                <div *ngIf="lastName.invalid && lastName.touched">
+                  <p class="text-danger">Please enter your Last Name</p>
+                </div>
+              <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+                <p>Password</p>
+
+                <input type="password" autocomplete="off" id="mc-email" placeholder="Password" class="form-control"
+                       name="pwd" [(ngModel)]="user.pwd" [disabled]="true">
+                <br>
+                <br><br>
+                <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+                <p>New Password</p>
+
+                <input type="password" autocomplete="off" id="mc-email" placeholder="Password" class="form-control"
+                     name="pwd" [(ngModel)]="user.pwd" #pwd="ngModel" required minlength="8">
+                <br>
+                <br><br>
+
+                <div *ngIf="pwd.invalid && pwd.touched">
+                  <div *ngIf="pwd.errors.required">
+                    <p class="text-danger"> Please enterYour password</p>
+                  </div>
+                  <div *ngIf="pwd.errors.minlength">
+                    <p class="text-danger">Your password should contains means 8 caracteres
+                    </p>
+                  </div>
+                </div>
+
+
+                <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+                <p>Phone Number</p>
+
+                <input type="number" autocomplete="off" id="mc-email" placeholder="Phone Number" class="form-control"
+                       name="phonenumber" [(ngModel)]="user.numTel" #phonenumber="ngModel" required pattern="[0-9]{8}">
+
+                <br><br><br>
+                <div *ngIf="phonenumber.invalid && phonenumber.touched">
+                  <div *ngIf="phonenumber.errors.required">
+                    <p class="text-danger"> Please enter Your phone number</p>
+                  </div>
+                  <div *ngIf="phonenumber.errors.pattern">Your password should contains means 8 number</div>
+                </div>
+
+                <input type="submit" value="Edit Profile" name="submit" id="submitButton" class="btn small" title="Submit Your Message!" [disabled]="f.invalid" (click)="update()">
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+

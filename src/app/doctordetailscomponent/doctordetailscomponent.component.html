@@ -1,0 +1,107 @@
+<div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('assets/images/price-bg.png');">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12 col-sm-12">
+             <div class="text-contant">
+                <h2>
+                   <span class="center"></span>
+                   <a href="" class="typewrite" data-period="2000" data-type='["Welcome to Our cabinet","Thanks For your visit","You can take A date"]'>
+                   <span class="wrap"></span>
+                   </a>
+                </h2>
+             </div>
+          </div>
+       </div>
+       <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>
+<div class="right-header">
+    <div class="header-info">
+        <div class="header-info">
+            <div class="info-inner">
+
+               <span class="icontop"><img src="assets/images/phone-icon.png" alt="#"></span>
+               <span class="iconcont"><a href="tel:800 123 456">{{doctor.numTel}}</a></span>
+            </div>
+        <div class="info-inner">
+            <span class="icontop"><img src="assets/images/envl1.png" alt="#"></span>
+            <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">{{doctor.email}}</a></span>
+        </div>
+        <div class="info-inner">
+
+        </div>
+    </div>
+    </div>
+</div>
+<br>
+
+
+
+   <footer id="footer" class="footer-area wow fadeIn">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-4">
+             <div class="logo padding">
+                <a href=""><img src="images/logo.png" alt=""></a>
+                <img src={{doctor.img}} alt="" class="img-responsive alignleft">
+             </div>
+          </div>
+          <div class="col-md-4">
+            <div class="subcriber-info">
+                <h3>{{doctor.firstName }}{{""}} {{doctor.lastName }}</h3>
+                <p>{{doctor.nom_Cabinet}}<small>- {{doctor.domaine}}</small></p>
+                <p class="lead">{{doctor.description}}</p>
+
+                <p>Birth Date:{{doctor.datedeNaissance}}</p>
+
+              <a [routerLink]="['/rendezvouslist',doctor.id]" *ngIf="user" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Take A Date</a>
+
+            </div>
+           </div>
+       </div>
+    </div>
+     <hr>
+
+     <a *ngIf="user" (click)="show()" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Comments</a>
+
+     <div style="margin-left: 30px;" *ngIf="interface">
+
+
+
+       <div style="margin-left: 800px;margin-right: 30px;">
+
+         <form id="mc-form" class="mc-form" [formGroup]="ratingForm">
+          <p> <label>Add Comment</label></p>
+           <input type="text" autocomplete="off" id="mc-email" placeholder="Search For Doctors" class="form-control" formControlName="comments" name="chaine">
+           <br>
+           <select class="form-control" formControlName="nomber">
+             <option>1</option>
+             <option>2</option>
+             <option>3</option>
+             <option>4</option>
+             <option>5</option>
+           </select>
+           <button type="submit" style="margin-left: 365px;" (click)="submit()" class="btn btn-light btn-radius btn-brd grd1 effect-1">Add</button>
+         </form>
+       </div>
+
+
+          <div class="row" *ngFor="let c of rating">
+            <app-commentcomponent [rating]="c" (Notification2)="deletecomment($event)" (Notification)="updateComment($event)"></app-commentcomponent>
+  <div *ngIf="interface2 && c.user.id === user.id">
+
+
+       <form id="mc-form" class="mc-form" #f="ngForm">
+
+         <input type="text" autocomplete="off" id="mc-email" [(ngModel)]="c.comments" placeholder="update" [value]="c.comments" class="form-control" name="chaine" style="margin-left:100px;">
+         <br>
+         <button type="submit" style="margin-left: 365px;" (click)="updatee()" class="btn btn-light btn-radius btn-brd grd1 effect-1">Update</button>
+
+       </form>
+    </div>
+          </div>
+</div>
+ </footer>
+
+

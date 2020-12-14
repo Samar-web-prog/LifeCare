@@ -1,0 +1,20 @@
+<div class="subcriber-info">
+  <h3>
+    {{rendezVous.nompatient}}{{" "}}{{rendezVous.prenompatient}}      </h3>
+</div>
+<p>
+  Date:{{rendezVous.date}}
+
+
+<p>
+  Day: {{rendezVous.jour}}
+</p>
+<p>
+
+  Time:{{rendezVous.temp}}
+</p>
+<p>
+  Doctor{{rendezVous.docteur.nom_Cabinet}}
+</p>
+<p>Description: {{rendezVous.message}}</p>
+<input type="submit" value="Delete" name="submit" id="submitButton" class="btn small" title="Submit Your Message!" (click)="NotifSend()">

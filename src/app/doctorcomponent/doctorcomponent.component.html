@@ -1,0 +1,18 @@
+
+
+                  <div class="widget clearfix">
+                      <img src={{doctor.img}} alt="" class="img-responsive img-rounded">
+
+                      <div class="widget-title">
+                          <h3>{{doctor.firstName }}{{""}}{{doctor.lastName }}</h3>
+                          <small>{{doctor.domaine}}</small>
+
+
+                    <p>{{doctor.description}}</p>
+                      <!-- end title -->
+                      <a [routerLink]="['/doctor_details',doctor.id]"data-scroll class="btn btn-light btn-radius btn-brd grd">Learn More</a>
+
+                  </div><!--widget -->
+
+
+

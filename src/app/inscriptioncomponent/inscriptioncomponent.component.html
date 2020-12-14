@@ -1,0 +1,166 @@
+<div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('assets/images/slider-bg.png');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="text-contant">
+          <h2>
+            <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
+            <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "Create a new account to use our services" , "Please Sign Up" ]'>
+              <span class="wrap"></span>
+            </a>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
+
+
+<footer id="footer" class="footer-area wow fadeIn">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="logo padding">
+          <!-- <a href=""><img src="assets/images/logo.png" alt=""></a>-->
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="subcriber-info">
+          <div class="heading">
+            <span class="icon-logo"><img src="assets/images/icon-logo.png" alt="#"></span>
+            <h2>Log In</h2>
+          </div>
+
+               <div class="subcriber-box">
+                  <form #f="ngForm" id="mc-form" class="mc-form">
+
+                     <div class="newsletter-form">
+
+                        <br>
+                        <!-- mailchimp-alerts Start -->
+                        <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+
+                        <input type="text" autocomplete="off" id="mc-email" placeholder="First Name" class="form-control"
+                        name="FirstName" [(ngModel)]="user.firstName" #firstName="ngModel" required>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br> <br>
+                       <br>
+                        <div *ngIf="firstName.invalid && firstName.touched">
+
+                           <p class="text-danger">Please enter your First Name</p>
+                        </div>
+                        <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+
+                        <input type="text" autocomplete="off" id="mc-email" placeholder="Last Name" class="form-control"
+                        name="LastName" [(ngModel)]="user.lastName" #lastName="ngModel" required>
+                     <br>
+                     <br><br>
+                     <div *ngIf="lastName.invalid && lastName.touched">
+                        <p class="text-danger">Please enter your Last Name</p>
+                     </div>
+                     <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+
+                     <input type="email" autocomplete="off" id="mc-email" placeholder="Email address" class="form-control"
+                     name="EMAIL" [(ngModel)]="user.email" #email="ngModel" required
+                     pattern="[a-zA-z]+.[a-zA-z]+@+[a-zA-z]+[.]+[a-zA-z]{3}">
+                  <br>
+                  <br>
+                  <br>
+                  <div *ngIf="email.invalid && email.touched">
+                     <div *ngIf="email.errors.required">
+                        <p class="text-danger"> Please enter Your Email address </p>
+                     </div>
+                     <div *ngIf="email.errors.pattern">
+                        <p class="text-danger">
+                         Mail Format:<br>FirstName.Lastname@domain.com
+                        </p>
+                     </div>
+                  </div>
+                  <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+                  <input type="password" autocomplete="off" id="mc-email" placeholder="Password" class="form-control"
+                  name="pwd" [(ngModel)]="user.pwd" #pwd="ngModel" required minlength="8">
+               <br>
+               <br>
+               <br>
+               <div *ngIf="pwd.invalid && pwd.touched">
+                  <div *ngIf="pwd.errors.required">
+                     <p class="text-danger"> Please enter Your password</p>
+                  </div>
+                  <div *ngIf="pwd.errors.minlength">
+                     <p class="text-danger">Your password should contains means 8 caracteres
+                        </p>
+                     </div>
+               </div>
+               <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+
+               <input type="number" autocomplete="off" id="mc-email" placeholder="Phone Number" class="form-control"
+                  name="phonenumber" [(ngModel)]="user.numTel" #phonenumber="ngModel" required pattern="[0-9]{8}">
+
+               <br><br><br>
+               <div *ngIf="phonenumber.invalid && phonenumber.touched">
+                  <div *ngIf="phonenumber.errors.required">
+                     <p class="text-danger"> Please enter Your phone number</p>
+                  </div>
+                 <div *ngIf="phonenumber.errors.pattern">
+                   <p class="text-danger"> Your phone number should contains 8 numbers</p>
+                 </div>
+                  <div *ngIf="phonenumber.errors.pattern">Your password should contains means 8 number</div>
+               </div>
+               <div class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></div>
+
+               <input type="date" autocomplete="off" id="mc-email" placeholder="Birth Date" class="form-control"
+                  name="Birth Date" [(ngModel)]="user.datedeNaissance" #birth="ngModel" required>
+               <br>
+               <br>
+               <br>
+               <div *ngIf="birth.invalid && birth.touched">
+                  <div *ngIf="birth.errors.required">
+                     <p class="text-danger"> Please enter Your Birth Date</p>
+                  </div>
+               </div>
+
+               <input type="submit" value="Subscribe" name="submit" id="submitButton" class="btn small" title="Submit Your Message!" [disabled]="f.invalid" (click)="add()">
+                      <br><br><br><br><br>
+                       <p>If you don have account please
+                         <a routerLink="/login" data-scroll class="btn btn-light btn-radius btn-brd grd">Sign In</a>
+                       </p>
+                     </div>
+</form></div>
+</div></div></div></div></footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

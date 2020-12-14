@@ -1,0 +1,81 @@
+<div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('assets/images/slider-bg.png');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="text-contant">
+          <h2>
+            <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
+            <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
+              <span class="wrap"></span>
+            </a>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
+
+<div id="testimonials" class="section wb wow fadeIn">
+    <div class="container">
+       <div class="heading">
+          <span class="icon-logo"><img src="assets/images/icon-logo.png" alt="#"></span>
+          <h2>Doctors</h2>
+       </div>
+
+
+
+       <!-- end title -->
+
+
+          <!-- end col -->
+
+
+
+
+
+       <!-- end row -->
+
+
+       <!-- end row -->
+    </div>
+    <!-- end container -->
+<div style="margin-left: 800px;margin-right: 30px;">
+
+  <form id="mc-form" class="mc-form">
+    <input type="text" autocomplete="off" id="mc-email" placeholder="Search For Doctors" class="form-control" (keyup)="affiche()" [(ngModel)]="chaine" name="chaine">
+
+  </form>
+</div>
+
+
+  <div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
+      <div class="container">
+
+
+          <div class="row dev-list text-center" >
+
+
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;"
+                 *ngFor="let d of listDoctor | paginate: { itemsPerPage: 4, currentPage: p } ;let i= index">
+
+            <app-doctorcomponent [doctor]="d"></app-doctorcomponent>
+</div>
+
+              </div><!-- end col -->
+
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+
+
+
+
+
+
+
+          </div><!-- end row -->
+
+  </div>

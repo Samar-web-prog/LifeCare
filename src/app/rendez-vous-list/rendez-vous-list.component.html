@@ -1,0 +1,226 @@
+<div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('assets/images/slider-bg.png');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="text-contant">
+          <h2>
+            <span class="center"><span class="icon"><img src="assets/images/icon-logo.png" alt="#" /></span></span>
+            <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
+              <span class="wrap"></span>
+            </a>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
+
+<div id="testimonials" class="section wb wow fadeIn">
+    <div class="container">
+       <div class="heading">
+          <span class="icon-logo"><img src="assets/images/icon-logo.png" alt="#"></span>
+          <h2> Dates For Doctor:{{doctor.lastName}}{{""}}{{doctor.firstName}}
+          </h2>
+       </div>
+
+
+
+
+
+
+
+
+<div class="right-header">
+  <div class="header-info">
+      <div class="header-info">
+          <div class="info-inner">
+
+             <span class="icontop"><img src="assets/images/phone-icon.png" alt="#"></span>
+             <span class="iconcont"><a href="tel:800 123 456">{{doctor.numTel}}</a></span>
+          </div>
+      <div class="info-inner">
+          <span class="icontop"><img src="assets/images/envl1.png" alt="#"></span>
+          <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">{{doctor.email}}</a></span>
+      </div>
+      <div class="info-inner">
+
+      </div>
+  </div>
+  </div>
+</div>
+<div class="container">
+   
+    <div class="row">
+
+      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+        <div class="inner-services">
+
+          <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let R of listRendezvous | paginate: { itemsPerPage: 4, currentPage: p };let i= index">
+
+            <div class="subcriber-info">
+              <h3>
+                {{R.date|date}}     </h3>
+            </div>
+
+
+
+            <p>
+               <b>Day:</b> {{R.jour}}
+            </p>
+           
+            <p>
+
+              <b>Time:</b>{{R.temp}}
+            </p>
+           
+            <!-- end service -->
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+
+            <!-- end service -->
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+      </div>
+
+
+
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="appointment-form">
+          <h3><span>+</span> Take Date</h3>
+          <div class="form">
+            <form action="index.html" [formGroup]="rendezvousform">
+              <fieldset>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" id="name"  formControlName="nompatient"/>
+                    </div>
+                  </div>
+                  <div *ngIf="nompatient.invalid && nompatient.touched">
+                    <p class="text-danger">Please enter the last name of patient</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="form-group">
+                      <label>First Name</label>
+                      <input type="text" id="email" formControlName="prenompatient"/>
+                    </div>
+                  </div>
+                  <div *ngIf="prenompatient.invalid && prenompatient.touched">
+                    <p class="text-danger">Please enter the first name of patient</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-section">
+                  <div class="row">
+                    <div class="form-group">
+                      <label>Day</label>
+                      <select class="form-control" formControlName="jour" name="D">
+                        <option> Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label>Time</label>
+                      <select class="form-control" formControlName="temp">
+                        <option>Time</option>
+                        <option>8.AM</option>
+                        <option>10 PM</option>
+                        <option>11 PM</option>
+                        <option>12 PM</option>
+                        <option>13 PM</option>
+                        <option>14 PM</option>
+
+                      </select>
+                    </div>
+                    <div *ngIf="temp.invalid && temp.touched">
+                      <p class="text-danger">Please enter the Time</p>
+                    </div>
+                    <div *ngIf="jour.invalid && jour.touched">
+                      <p class="text-danger">Please enter the Day</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                      <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" placeholder="Email Address" id="email" formControlName="date"/>
+                      </div>
+                      <div *ngIf="jour.invalid && jour.touched">
+                      <p class="text-danger">Please enter the Date</p>
+                      </div>
+                    </div>
+
+                  <div class="row">
+                    <!--
+                    <div class="form-group">
+                      <select class="form-control" *ngFor="let d of listRendezvous;let i= index">
+                        <option>{{d.description}}</option>
+
+                      </select>
+                    </div>
+                    -->
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="form-group">
+                      <label>Description</label>
+
+                      <textarea rows="4" id="textarea_message" class="form-control" placeholder="Your Message..." formControlName="description"></textarea>
+                    </div>
+                  </div>
+                  <div *ngIf="description.invalid && description.touched">
+                    <p class="text-danger">Please enter the Descrption it should containes 15 caracters</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="center">
+                        <button type="submit" [disabled]="rendezvousform.invalid" (click)="submit()">Submit</button></div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+<!-- end section -->
+
+<!-- doctor -->
+
+

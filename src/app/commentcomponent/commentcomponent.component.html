@@ -1,0 +1,26 @@
+
+
+<p>
+
+      <div class="info-inner">
+
+        <span class="icontop"><img src="assets/images/iconcom.png" alt="#"></span>
+        <span class="iconcont"><a href="tel:800 123 456"></a></span>
+      </div>
+<div class="col-md-4">
+  <div class="subcriber-info">
+    <h3>AddedBy:{{rating.user.firstName}}{{""}}{{rating.user.lastName}}</h3>
+<p class="lead">Comments:{{rating.comments}}:{{""}}{{""}}{{""}}</p>
+    <p><small>rating:{{rating.nomber}}/5</small>
+
+      <button style="border-color:blue;width: 20px;color: black;" *ngIf="rating.user.id === user.id" (click)="update()"><img style="width: 20px;" src="assets/images/update.jpg" alt="#">
+      </button>||
+      <button style="border-color: transparent;width: 20px;" *ngIf="rating.user.id === user.id" (click)="delete()"><img style="width: 20px;" src="assets/images/pobelle.png" alt="#">
+      </button>
+      <br>
+       Update
+    </p>
+
+
+
+</div>
